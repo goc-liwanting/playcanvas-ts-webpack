@@ -1,0 +1,178 @@
+html {
+    font-family: NeueHaasGroteskDP, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    background: rgb(0, 0, 0);
+    color: white;
+    -webkit-font-smoothing: antialiased;
+}
+
+.css-v9oua8 {
+    position: absolute;
+    top: calc(20px + env(safe-area-inset-top));
+    left: calc(20px + env(safe-area-inset-left));
+    right: calc(20px + env(safe-area-inset-right));
+    bottom: 20px;
+    pointer-events: none;
+}
+
+.css-v9oua8 .HUD__topleft {
+    pointer-events: auto;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+
+}
+
+@media all and (max-width: 280px) {
+    .HUD__topleft {
+      display: none;
+    }
+}
+
+.css-v9oua8 .HUD__btns {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 16px;
+    background: rgb(15, 15, 19);
+    padding: 0px 8px;
+}
+
+:root {
+    --sat: env(safe-area-inset-top);
+    --sab: env(safe-area-inset-bottom);
+    --sal: env(safe-area-inset-left);
+    --sar: env(safe-area-inset-right);
+}
+
+.css-v9oua8 .HUD__btn {
+    height: 44px;
+    width: 34px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+}
+
+.css-v9oua8 .HUD__topright {
+    pointer-events: auto;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.css-v9oua8 .HUD__mic-btn {
+    height: 44px;
+    width: 44px;
+    padding-left: 3px;
+    border-radius: 16px 0px 0px 16px;
+    background: rgb(15, 15, 19);
+    cursor: pointer;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.css-v9oua8 .HUD__account {
+    height: 44px;
+    border-radius: 0px 16px 16px 0px;
+    background: rgb(15, 15, 19);
+    cursor: pointer;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0px 12px 0px 13px;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.css-v9oua8 .HUD__account-address {
+    max-width: 75px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.css-v9oua8 .HUD__account > svg {
+    margin-left: 8px;
+}
+
+.css-v9oua8 .HUD__chat {
+    pointer-events: auto;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    max-width: 410px;
+    height: 210px;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.07);
+    transition: background 0.1s ease-out 0s;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    z-index: 1;
+}
+
+.css-v9oua8 .HUD__chat .HUD__chat-messages {
+    flex: 1 1 0%;
+    padding: 12px 18px;
+    overflow-y: auto;
+}
+
+.css-v9oua8 .HUD__chat .HUD__chat-messages-inner {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+}
+
+.css-v9oua8 .HUD__chat .HUD__chat-field {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    transition: border-color 0.1s ease-out 0s;
+}
+
+.css-v9oua8 .HUD__chat .HUD__chat-field > input {
+    outline: 0px;
+    border: 0px;
+    background: none;
+    margin: 0px 0px 2px;
+    font-family: inherit;
+    font-size: inherit;
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 0px 16px;
+}
+
+.css-v9oua8 .HUD__chat .HUD__chat-field > svg {
+    cursor: pointer;
+    margin-right: 12px;
+    color: rgba(255, 255, 255, 0.3);
+}
+

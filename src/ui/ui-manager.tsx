@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom';
 import * as React from 'react';
 import Main from './components/Main';
+import UI from './components/UI'
 
 export class UIManager {
   reactEntryPoint:HTMLElement;
@@ -21,6 +22,7 @@ export class UIManager {
 
   init() {
     ReactDOM.render(<Main/>, this.reactEntryPoint);
+    ReactDOM.render(<UI/>, this.reactEntryPoint);
   }
 }
 
