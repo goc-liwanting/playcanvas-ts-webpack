@@ -1,52 +1,37 @@
 import { type } from 'playcanvas';
 import * as React from 'react';
-import styled from 'styled-components'
+import styled, {createGlobalStyle} from 'styled-components'
 import Main from './Main';
+import {initialState, UIStateType, reducer} from './UIReducer'
 
-type UIStateType = "OnlyChat" | "OnlyUser" | "Both" | "None"
-type ActionType = "LeftTopClick" | "RightTopClick"
-
-interface UIState {
-    curState: UIStateType
+const GlobalStyle = createGlobalStyle`
+html {
+    font-family: NeueHaasGroteskDP, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    background: rgb(0, 0, 0);
+    color: white;
+    -webkit-font-smoothing: antialiased;
 }
 
-const initialState: UIState = {
-    curState: "OnlyChat"
+img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
 }
+`
 
-function reducer(state: UIState, action: ActionType): UIState{
-    let isMobile = !!navigator.userAgent.match(/AppleWebKit.*Mobile.*/);
-    switch (action){
-        case "LeftTopClick":
-            if (isMobile)
-                return { curState: "OnlyChat" };
-            else
-                switch(state.curState){
-                    case "Both":
-                        return {curState: "OnlyUser"}
-                    case "OnlyChat":
-                        return {curState: "None"}
-                    case "OnlyUser":
-                        return {curState: "Both"}
-                    case "None":
-                        return {curState: "OnlyChat"}
-                }
-        case "RightTopClick":
-            if (isMobile)
-                return { curState: "OnlyUser" };
-            else
-                switch(state.curState){
-                    case "Both":
-                        return {curState: "OnlyChat"}
-                    case "OnlyChat":
-                        return {curState: "Both"}
-                    case "OnlyUser":
-                        return {curState: "None"}
-                    case "None":
-                        return {curState: "OnlyUser"}
-                }
-    }
-}
+const MainMenu_box = styled.div`
+    background: rgb(15, 15, 19);
+    width: 340px;
+    height: 500px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    pointer-events: auto;
+`
 
 function HUD_topleft({handleClick}: {handleClick: () => void}){
     return(
@@ -110,7 +95,6 @@ function HUD_topright({handleClick} : {handleClick: () => void}){
 }
 
 function HUD_chat({chatState} : {chatState:UIStateType}){
-    console.log(chatState);
     return(
         <div className="HUD__chat" style={{display: ((chatState == "Both") || (chatState == "OnlyChat")) ? 'block' : 'none'}}>
             <div className="HUD__chat-messages">
@@ -133,11 +117,10 @@ function HUD_chat({chatState} : {chatState:UIStateType}){
     )
 }
 
-function MainMenu({menuState} : {menuState:UIStateType}){
-    console.log(menuState);
+function MainMenu({menuState} : {menuState:UIStateType}){ 
     return(
         <div className="MainMenu css-1cbinnv" >
-            <div className="MainMenu_box" style={{display: ((menuState == "Both") || (menuState == "OnlyUser")) ? 'block' : 'none'}}/>
+            <MainMenu_box style={{display: ((menuState == "Both") || (menuState == "OnlyUser")) ? 'block' : 'none'}}/>
         </div>
     )
 }
@@ -157,6 +140,9 @@ function HUD(){
 
 export default function UI() {
   return (
-    <HUD/>
+    <div>
+        <GlobalStyle/>
+        <HUD/>
+    </div>
   );
 }

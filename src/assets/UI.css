@@ -1,13 +1,3 @@
-html {
-    font-family: NeueHaasGroteskDP, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.4;
-    background: rgb(0, 0, 0);
-    color: white;
-    -webkit-font-smoothing: antialiased;
-}
-
 .css-v9oua8 {
     position: absolute;
     top: calc(20px + env(safe-area-inset-top));
@@ -58,11 +48,6 @@ html {
     justify-content: center;
     cursor: pointer;
     position: relative;
-}
-
-img, svg, video, canvas, audio, iframe, embed, object {
-    display: block;
-    vertical-align: middle;
 }
 
 .css-v9oua8 .HUD__topright {
@@ -174,18 +159,6 @@ img, svg, video, canvas, audio, iframe, embed, object {
     cursor: pointer;
     margin-right: 12px;
     color: rgba(255, 255, 255, 0.3);
-}
-
-.MainMenu_box {
-    background: rgb(15, 15, 19);
-    width: 340px;
-    height: 500px;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    -webkit-box-align: stretch;
-    align-items: stretch;
-    pointer-events: auto;
 }
 
 .css-1cbinnv {
