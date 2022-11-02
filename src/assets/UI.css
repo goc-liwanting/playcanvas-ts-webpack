@@ -176,3 +176,35 @@ img, svg, video, canvas, audio, iframe, embed, object {
     color: rgba(255, 255, 255, 0.3);
 }
 
+.MainMenu_box {
+    background: rgb(15, 15, 19);
+    width: 340px;
+    height: 500px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    pointer-events: auto;
+}
+
+.css-1cbinnv {
+    position: absolute;
+    inset: 0px;
+    padding-left: calc(20px + env(safe-area-inset-left));
+    padding-right: calc(20px + env(safe-area-inset-left));
+    padding-top: calc(20px + 44px + 20px + env(safe-area-inset-top));
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+@media all and (max-width: 280px) {
+    .HUD__topleft {
+      display: none;
+    }
+}
